@@ -1,2 +1,3 @@
 Baixar o Nodejs - https://nodejs.org/en/
 Informar comando - npm install -g json-server
+Iniciar servidor - json-server --watch db.json
