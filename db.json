@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Usuário 2",
       "location": "Canadá"
+    },
+    {
+      "id": 4,
+      "name": "Mardem Careca",
+      "location": "Brasil"
     }
   ]
 }

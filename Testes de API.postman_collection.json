@@ -1,0 +1,194 @@
+{
+	"id": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+	"name": "Testes de API",
+	"description": "",
+	"order": [
+		"0a1bfb02-9464-eea0-930c-926ad6ceb03e",
+		"075a1a0f-8e30-838a-434f-5b3737693d08",
+		"e50e65aa-ab51-e0bb-a94d-88ef4b4739dc",
+		"22aaa474-c2ec-9b03-91b5-8ce9f7797a47",
+		"bf645554-9e6f-6791-4fdd-4c4dc462881e",
+		"f4e8243e-9bd1-aa7c-e2a9-8546264a4581"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1583940480967,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "075a1a0f-8e30-838a-434f-5b3737693d08",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contém o id = 3\"] = responseBody.has(3);\n\ntests[\"Body contém o name = Usuário 3\"] = responseBody.has(\"Usuário 3\");\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1583941390105,
+			"name": "GET após o POST",
+			"description": "",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"responses": []
+		},
+		{
+			"id": "0a1bfb02-9464-eea0-930c-926ad6ceb03e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1583940739267,
+			"name": "POST",
+			"description": "",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"responses": [],
+			"rawModeData": "    {\n        \"id\": 3,\n        \"name\": \"Usuário 3\",\n        \"location\": \"Brasil\"\n    }"
+		},
+		{
+			"id": "22aaa474-c2ec-9b03-91b5-8ce9f7797a47",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contém o name = Usuário numero 3\"] = responseBody.has(\"Usuário numero 3\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1583941127260,
+			"name": "GET após o PUT",
+			"description": "",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"responses": []
+		},
+		{
+			"id": "bf645554-9e6f-6791-4fdd-4c4dc462881e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users/3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1583941500420,
+			"name": "DELETE",
+			"description": "",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"responses": []
+		},
+		{
+			"id": "e50e65aa-ab51-e0bb-a94d-88ef4b4739dc",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users/3",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"data": [],
+			"dataMode": "raw",
+			"name": "PUT",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1583940491676,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 3,\n    \"name\": \"Usuário numero 3\",\n    \"location\": \"Brasil\"\n}"
+		},
+		{
+			"id": "f4e8243e-9bd1-aa7c-e2a9-8546264a4581",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/users",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "883a0b64-8a3e-eeec-380c-eb09e6fc7c06",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET após o DELETE",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1583941311195,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body não contém o id = 3\"] = responseBody.has(\"3\");\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
