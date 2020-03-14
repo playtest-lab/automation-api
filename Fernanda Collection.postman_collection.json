@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "d0dad994-6f71-4183-8518-448e13742b4a",
+		"name": "Fernanda Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "579afefd-159c-4f17-8d86-9d8544dacc5b",
+						"exec": [
+							"pm.test(\"Status Fernanda deu certo 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 6,\r\n    \"name\": \"Usuário 6\",\r\n    \"location\": \"Canadá\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c52b8e5-b152-488a-b4a0-0c93e5c25634",
+						"exec": [
+							"pm.test(\"Fernanda o código esta ok 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body contem o ID = 6\", function () {",
+							"pm.test(\"Body contem o location = Canadá\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"    pm.expect(pm.response.text()).to.include(\"6\");",
+							"});",
+							"pm.test(\"Body contem o name = usuario 6\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Usuário 6\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 6,\r\n    \"name\": \"Fernanda\",\r\n    \"location\": \"Canadá\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c52b8e5-b152-488a-b4a0-0c93e5c25634",
+						"exec": [
+							"pm.test(\"Fernanda o código esta ok 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body contem o ID = 6\", function () {",
+							"pm.test(\"Body contem o location = Canadá\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"    pm.expect(pm.response.text()).to.include(\"6\");",
+							"});",
+							"pm.test(\"Body contem o name = Fernanda\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Fernanda\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c52b8e5-b152-488a-b4a0-0c93e5c25634",
+						"exec": [
+							"pm.test(\"Fernanda o código esta ok 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body contem o ID = 6\", function () {",
+							"pm.test(\"Body contem o location = Canadá\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"    pm.expect(pm.response.text()).to.include(\"6\");",
+							"});",
+							"pm.test(\"Body contem o name = Fernanda\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Fernanda\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
