@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "9f3b4889-d749-433f-8c7e-74a3563c0bc7",
+		"name": "Kenia Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a05f3271-f7f8-4326-93ce-7f52e9ea0d23",
+						"exec": [
+							"pm.test(\"Kênia the Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 5,\r\n    \"name\": \"Usuário 5\",\r\n    \"location\": \"Canadá\"\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95cd7222-5ffe-4463-8c46-82faf92b0228",
+						"exec": [
+							"pm.test(\"Kênia the Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"O Body contem o ID igual a 5 ?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"5\");",
+							"pm.test(\"O nome esperado é o Usuário 5?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Usuário 5\");",
+							"pm.test(\"A localização é Canadá?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 5,\r\n    \"name\": \"Kenia Moura\",\r\n    \"location\": \"Canadá\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/PUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95cd7222-5ffe-4463-8c46-82faf92b0228",
+						"exec": [
+							"pm.test(\"Kênia the Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"O Body contem o ID igual a 5 ?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"5\");",
+							"pm.test(\"O nome esperado é o Kenia Moura?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Kenia Moura\");",
+							"pm.test(\"A localização é Canadá?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95cd7222-5ffe-4463-8c46-82faf92b0228",
+						"exec": [
+							"pm.test(\"Kênia the Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"O Body contem o ID igual a 5 ?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"5\");",
+							"});",
+							"pm.test(\"O nome esperado é o Kenia Moura?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Kenia Moura\");",
+							"});",
+							"pm.test(\"A localização é Canadá?\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Canadá\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
