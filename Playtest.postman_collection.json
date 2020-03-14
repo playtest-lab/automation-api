@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "3d7decfd-c38e-4994-8691-3a41c4401b59",
+		"name": "Playtest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7e979b4-88a0-4097-bff4-d10e70547660",
+						"exec": [
+							"pm.test(\"Deu certo eeeeeeeeeeeeeeeeeeeeeeee\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 5,\r\n    \"name\": \"Usuário 5\",\r\n    \"location\": \"Brasil\"\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get / Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "224bbb48-040a-4279-8617-e704090a797c",
+						"exec": [
+							"pm.test(\"Buscou, tá ok eeeeeeee\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"O ID eeeeeeee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"5\");",
+							"});",
+							"pm.test(\"O nome tá ok eeeeeeee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Usuário 5\");",
+							"});",
+							"pm.test(\"A localização tá ok eeeeeeee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Brasil\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Faz um Get para garantir que o Post foi feito."
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 5,\r\n    \"name\": \"Leticia\",\r\n    \"location\": \"Brasil\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				},
+				"description": "Alterar uma informação"
+			},
+			"response": []
+		},
+		{
+			"name": "Get / Put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "224bbb48-040a-4279-8617-e704090a797c",
+						"exec": [
+							"pm.test(\"O nome alterado tá ok eeeeeeee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Leticia\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Faz um Get para garantir que o Post foi feito."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get / Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "224bbb48-040a-4279-8617-e704090a797c",
+						"exec": [
+							"pm.test(\"O nome alterado tá ok eeeeeeee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Leticia\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Faz um Get para garantir que o Post foi feito."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
